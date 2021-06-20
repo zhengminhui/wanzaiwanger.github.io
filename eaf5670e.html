@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="SuPQ3DDNV0"><meta name="author" content="Minhui Zheng, mattzhengjob@gmail.com"><title>Regret Minimization and Multi-task Serially · Minhui's blog</title><meta name="description" content="前两天在 TechCrunch 上看了一个 Bezos 采访的摘要，有两点感触很深，是以记之。
+第一个就是之前听他说的 “regret minimization”。他谈到他离开华尔街准备建立一个网上书店。他的老板告诉他这是个好主意，但是是个 “a better idea for someone wh"><meta name="keywords" content="Hexo,HTML,JavaScript,CSS,Frontend,Angular,React,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/custom.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-96963741-1', 'auto');
+ga('send', 'pageview');</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">Minhui's blog</a></h3><div class="description"><p>Live long and prosper.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/zhengminhui" target="_blank"><i class="fa fa-github"></i></a></li><li><a href="http://instagram.com/wanzaiwanger" target="_blank"><i class="fa fa-instagram"></i></a></li><li><a href="http://weibo.com/alandwhatever" target="_blank"><i class="fa fa-weibo"></i></a></li><li><a href="http://twitter.com/wanzaiwanger" target="_blank"><i class="fa fa-twitter"></i></a></li></ul><div class="footer"><span>Theme by CaiCai & Ben</span><div class="by_farbox"><span>Proudly published with Hexo</span></div><span><i class="fa fa-user">&nbsp;</i><span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> visitors | </span><i class="fa fa-eye">&nbsp;</i><span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> views</span></span></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="https://secure.gravatar.com/avatar/c85f5cf8f290742d2e21e929f89a5215?s=200"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>Regret Minimization and Multi-task Serially</a></h3></div><div class="post-content"><p>前两天在 TechCrunch 上看了一个 Bezos 采访的摘要，有两点感触很深，是以记之。</p>
+<p>第一个就是之前听他说的 “regret minimization”。他谈到他离开华尔街准备建立一个网上书店。他的老板告诉他这是个好主意，但是是个 “a better idea for someone who didn’t have a good job”。这里他提到他做决定的方法（当然他解释道，这种事 personal decision，而不是 data driven decision），把人生投射到八十岁的时候，然后想象自己是会因为做过的事做错了而后悔，还是因为某条 “path not taken” 而后悔。</p>
+<p>我觉得，即使是现在，时常在做出决定时，还是着眼当下，权衡短期的利弊。而从来没有放眼到这么一个高度来考虑问题。前些天上网看有人这么说：设想自己五年后的样子，然后看看基于自己现在的状况，五年后是否能达到自己定的目标。坦白讲，我当时有点小小的震动。我既没有对自己五年后有个清晰的规划，即使有，在目前这种身份和状态下，保守估计也是无法达到的。顿时危机感很强，现在大方向回国是定下来了，但是回去之后的计划，过段时间需要好好思考一下，看如何才能达到 regret minimization。</p>
+<p>第二，关于手机 addiction 和多任务。Bezos 说他讨厌多任务， 比如和朋友家人吃饭时从来不看手机，”be doing whatever I’m doing”。还举例说，如果需要查看邮件，那么就用全部注意力和精力来回邮件。相较于在不同任务中来回，他更倾向于阶段性的 focus，”multi-task serially”，按顺序的多任务。</p>
+<p>关于这点，我近年来也算是感触很深了。原来总觉得自己聪明（其实都是耍小聪明罢了），喜欢同时开工很多事情，然后幻想一件一件做完时候的成就感。现在回想起来，实在是高估了自己的执行力和专注能力。再比如看书，经常几本书同时开始看，然后这里搂一眼，那里翻几页。根本没有沉下心去认真思考，纯粹为了看而看。即使到前段时间，也是如此。同时看几个教程，反而没有花时间钻到底层去，还营造了一种很忙，很刻苦的假象。网上所说的，“不要用战术上的勤奋掩盖战略上的懒惰”，我觉得很好的形容了我过去的学习方式。</p>
+<p>现在回想起来，归根结底，不够专注，贪多而不精。如果说 2018 年我想掌握什么技能的话，我想专注和单线程是最想努力做到的，每一次只学习一门技术，只读一本书。如果没有达到可以侃侃而谈，不能做出一些有效的输出（写博客，向不懂的人介绍）时，不应该 move on 到下一个领域。看技术书也是一样，每次只看一本，看完了要学着画思维导图，尝试掌握主体脉络。</p>
+<p>最后还想说一点，原来我很讨厌人物传记，采访，或者诸如生活，工作方法的书籍，总觉得不是鸡汤就是很虚伪。现在看来真是目光短浅加上莫名其妙的自大。原来觉得这些信息不过是一些有钱人没事吹吹牛，没什么干货。现在不会这么看了。现在觉得人就像背着个口袋出发，看到别人的优点，或者高效的方法，就挑挑拣拣装进自己口袋。虚心一点，总能从别人那里发现自己不足的地方。</p>
+<p>目前就想到这么多吧，希望时刻能督促自己。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-calendar"></i><span class="date">2018-02-23</span><i class="fa fa-tag"></i><a href="/categories/life/" title="life" class="tag">life </a><span id="busuanzi_container_page_pv"></span> Total <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> views.</div></div></div></div><div class="share"><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,https://zhengminhui.github.io/eaf5670e.html,Minhui' target="_blank" rel="noopener"s blog,Regret Minimization and Multi-task Serially,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/3cf64c81.html" title="三月总结" class="btn">prev post</a></li><li class="next pagbuttons"><a role="navigation" href="/b18b9540.html" title="Run React Native App on Mac" class="btn">next post</a></li></ul></div><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7/dist/Valine.min.js?v=undefined"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  visitor: true,
+  notify:false || false, 
+  verify:false|| false, 
+  app_id:'ed7iCQax3fVhwDVnoOB6ki1i-gzGzoHsz',
+  app_key:'2l1dqX729jjysNfG5uK0f0yH',
+  placeholder:'_(:3 」∠ )_',
+  path: window.location.pathname,
+  avatar:'retro',
+  lang:'en',
+})</script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script>var link = '';
+(function() {
+  $("img").each( (i,o) => {
+    var o = $(o);
+    var s = o.attr("src");
+      // 判断图片的链接是否包含新浪或掘金的关键字
+    if( s.indexOf("sinaimg") > 0 || s.indexOf('gold') > 0 ){
+      // 给这个标签加上referrerPlicy属性
+      o.attr("referrerpolicy","no-referrer");
+        // 备份图片的src
+      link = o.attr("src");
+        // 重新设置src，让页面重新加载一次图片
+      o.attr("src",link);
+    }
+  });
+})();</script></body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="SuPQ3DDNV0"><meta name="author" content="Minhui Zheng, mattzhengjob@gmail.com"><title>我读《前端工程化：体系设计与实践》 · Minhui's blog</title><meta name="description" content="《前端工程化》这本书也是买了很久，当时读了几个章节，觉得比较浅显。这个周末拿出来又从头到尾翻了一遍，总体的评价一般，可以看看目录脉络，打分 3/5。取决于读者的阅读速度，如果三天看完，我感觉不亏。
+这本书出版于2018年1月。书中使用的 Webpack 配置代码还是 V1，V2时期，目前已经更新到 "><meta name="keywords" content="Hexo,HTML,JavaScript,CSS,Frontend,Angular,React,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/custom.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-96963741-1', 'auto');
+ga('send', 'pageview');</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">Minhui's blog</a></h3><div class="description"><p>Live long and prosper.</p></div></div></div><ul class="social-links"><li><a href="https://github.com/zhengminhui" target="_blank"><i class="fa fa-github"></i></a></li><li><a href="http://instagram.com/wanzaiwanger" target="_blank"><i class="fa fa-instagram"></i></a></li><li><a href="http://weibo.com/alandwhatever" target="_blank"><i class="fa fa-weibo"></i></a></li><li><a href="http://twitter.com/wanzaiwanger" target="_blank"><i class="fa fa-twitter"></i></a></li></ul><div class="footer"><span>Theme by CaiCai & Ben</span><div class="by_farbox"><span>Proudly published with Hexo</span></div><span><i class="fa fa-user">&nbsp;</i><span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> visitors | </span><i class="fa fa-eye">&nbsp;</i><span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> views</span></span></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="https://secure.gravatar.com/avatar/c85f5cf8f290742d2e21e929f89a5215?s=200"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>我读《前端工程化：体系设计与实践》</a></h3></div><div class="post-content"><p>《前端工程化》这本书也是买了很久，当时读了几个章节，觉得比较浅显。这个周末拿出来又从头到尾翻了一遍，总体的评价一般，可以看看目录脉络，打分 3/5。取决于读者的阅读速度，如果三天看完，我感觉不亏。</p>
+<p>这本书出版于2018年1月。书中使用的 Webpack 配置代码还是 V1，V2时期，目前已经更新到 v5 了。所以书中引用的代码估计实用性不太高，大概扫一眼，看看大致是干什么就可以。具体到现实问题，肯定还是得去现查最新的文档。</p>
+<p>第一章讲了一下前端的开发历史，SPA的出现以及优缺点，为什么需要前后端分离等问题。算是一些常见面试问题的总结吧。第二章提到的 Yeoman，15年我使用 angular.js 的时候，基本上项目都是用yo搭建。估计现在使用量也下降很多。目前的主流框架都提供了自己的 CLI 工具供用户快速搭建项目。日常开发中，一个团队里说不定好几个小组都有自己的脚手架生成器。第三章相对来说值得阅读。讲了一些常用loader，plugin的使用场景。module 和component 的区别，强制缓存和协商缓存，覆盖更新和增量更新，hash的作用，静态资源 CDN 部署等。对于入门的工程师来说，是一个比较好的了解构建的方向。再后面几章就有点浅尝辄止了，一笔带过。</p>
+<p>关于模块和组件的区别——这点我与作者意见相左。看到他引用的英文描述我觉得没有问题，但是中文解释(P102)我不能认同。根据英文的翻译，模块是设计实体，组件是运行实体。模块应该是包含组件的，所以他举得例子“一个button是模块，一个包括多个button的导航栏是一个组件”我认为是恰恰相反，导航栏是模块，模块中包含了若干按钮的组件。关于这点，作者也提到这两者定义的模糊，我这里也只是表述一下自己想法。</p>
+<p>剩下的我想谈一谈我对前端工程化的认识。“前端工程化”这个词，我是从准备回国，开始频繁和国内公司面试才得知的。每次面试都一定会有人问我，你怎么看待前端工程化。给我的感受是怎么前端不算工程吗？为什么还要特地说一下工程化呢？当时是确实不明白这个概念。我理解的工程，不论前端后端，都需要一套完善的编译，构建，部署，上线流程。在美国如果出现在JD里，可能会明确写需要你有CI/CD经验，需要你熟悉 git version control，需要你了解 docker 或者有 AWS 经验，会很明确技术栈。现在回过头去看中美之间的面试，侧重确实很不一样。在经验问题上，国内面试有点缥缈，问一些很大的问题，工程化的看法，有点像“道”；美国面试会问你AWS怎么玩，Jenkins怎么用，持续集成怎么弄，比较具体，有点像“术”。</p>
+<p>前几天，我想绘制一张前端的知识图谱，有一部分就是前端工程化。但是当时是用英文书写的，所以我一直在想一个贴合的翻译，想了好几个，都觉得很蠢。所以我突然想去查查在英文世界里，有没有这个概念。很遗憾到目前我还没有搜到针对这个词的很精准的对应。如果有朋友了解的，希望可以不吝赐教。不过我在搜索的过程中，找到 Uber Eats 技术团队写的一篇文章，如果感兴趣的话，可以看看 <a href="https://eng.uber.com/uber-eats-com-web-app-rewrite/" target="_blank" rel="noopener">Counting Calories: How We Improved the Performance and Developer Experience of UberEats.com</a>。文章的一部分提到了他们是怎么去做工程化的。但是依旧，没有“工程化”这种概念名词出现。所以如果要我选一个前端工程化的英文翻译，我想我可能会用 Automate。</p>
+<p>叫什么不重要，怎么做和为什么做比较重要。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-calendar"></i><span class="date">2020-04-12</span><i class="fa fa-tag"></i><a href="/categories/life/" title="life" class="tag">life </a><a href="/tags/books/" title="books" class="tag">books </a><a href="/tags/reading/" title="reading" class="tag">reading </a><a href="/tags/frontend/" title="frontend" class="tag">frontend </a><a href="/tags/前端工程化/" title="前端工程化" class="tag">前端工程化 </a><span id="busuanzi_container_page_pv"></span> Total <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> views.</div></div></div></div><div class="share"><div class="weibo"> <a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"> <a href="http://twitter.com/home?status=,https://zhengminhui.github.io/966a6548.html,Minhui' target="_blank" rel="noopener"s blog,我读《前端工程化：体系设计与实践》,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/9e29172c.html" title="下班" class="btn">prev post</a></li><li class="next pagbuttons"><a role="navigation" href="/23ae8ddc.html" title="三月读书" class="btn">next post</a></li></ul></div><a id="comments"></a><div id="vcomments" style="margin:0 30px;"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7/dist/Valine.min.js?v=undefined"></script><script>var valine = new Valine({
+  el:'#vcomments',
+  visitor: true,
+  notify:false || false, 
+  verify:false|| false, 
+  app_id:'ed7iCQax3fVhwDVnoOB6ki1i-gzGzoHsz',
+  app_key:'2l1dqX729jjysNfG5uK0f0yH',
+  placeholder:'_(:3 」∠ )_',
+  path: window.location.pathname,
+  avatar:'retro',
+  lang:'en',
+})</script></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script>var link = '';
+(function() {
+  $("img").each( (i,o) => {
+    var o = $(o);
+    var s = o.attr("src");
+      // 判断图片的链接是否包含新浪或掘金的关键字
+    if( s.indexOf("sinaimg") > 0 || s.indexOf('gold') > 0 ){
+      // 给这个标签加上referrerPlicy属性
+      o.attr("referrerpolicy","no-referrer");
+        // 备份图片的src
+      link = o.attr("src");
+        // 重新设置src，让页面重新加载一次图片
+      o.attr("src",link);
+    }
+  });
+})();</script></body></html>
